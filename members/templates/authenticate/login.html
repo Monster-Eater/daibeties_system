@@ -1,0 +1,122 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login|The Health prediction</title>
+    <style>
+    body{
+        margin: 0px;
+        padding: 10px;
+        position: center;
+        text-align: center;
+        font-family:sans-serif; 
+        height: 100vh;
+        background-image: url(/static/images/sign.jpg);
+        background-size: cover ; 
+        background-repeat: no-repeat;
+    } 
+  #div{
+      
+      width: 40vw;
+      height: 55vh;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background-color: rgba(0,0,0,0.5);
+      transform: translate(-50%, -50%);
+      padding: 5px;
+      box-shadow: 2px, 2px, 20px, #919191;
+  }
+  #h3{
+      color: #fff;
+
+  }
+  label {
+      color: #fff;
+      text-align: left;
+      margin-left: 35px;
+      margin-bottom: 10px;
+  }  
+  input{
+      color:white;
+      text-align: left;
+      font-size: 20px;
+      font-weight: 200;
+      border: 1px solid #fff;
+      width: 300px;
+      background-color: transparent; 
+      border-radius: 10px;
+      outline: none; 
+      margin: 5px;
+  }
+  #m-h{
+      color:#919191;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 300;
+
+  } 
+  button{
+      margin-top: 10px;
+      font-size: inherit;
+      border-radius: 10px;
+      color: #fff;
+      background-color: #828588;
+      width: 150px;
+      padding: 10px;
+      outline: none;
+      cursor: pointer;
+  }
+  #btt{
+      margin-top: 1vw;
+      display: flex;
+      font-size: inherit;
+      border-radius: 10px;
+      color: #fff;
+      margin-left: 13vw;
+      text-decoration:none ;
+      background-color: #828588;
+      width: 150px;
+      padding: 10px;
+      outline: none;
+      cursor: pointer;
+      
+      
+  }
+  </style>
+</head>
+<body>
+    <br>
+    <br>
+   
+
+    <div id='div'>
+    <form action="" method="post">
+     <h3 id="h3">Sign-In Here</h3>
+     {% csrf_token %}
+
+    <label for="username">Username</label>
+    <input type="text" required placeholder="Enter Your username" id="username" name="username">
+    <br>    
+     <label for="password">Password</label>
+     <input type="password" required placeholder="password" id="password" name="password">
+     <br>
+     <button id='btn' type="submit">Log-In</button>
+     <br>
+     <a id="btt" href=" {% url 'register_user' %} ">Create an account</a>
+    </div>
+    </form>
+
+    </body>
+    </html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile-Edit|The Health prediction </title>
+    <style>
+          body{
+        
+        margin: 0px;
+        padding: 0px;
+        position: center;
+        text-align: center;
+        font-family:sans-serif; 
+        height: 100vh;
+        background-image: url(/static/images/sign.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    #div{
+        
+        width: 40vw;
+        height: 65vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: rgba(0,0,0,0.5);
+        transform: translate(-50%, -50%);
+        padding: 5px;
+        box-shadow: 2px, 2px, 20px, #919191;
+    }
+    #h3{
+        color: #fff;
+
+    }
+    label {
+        color: #fff;
+        text-align: left;
+        margin-left: 35px;
+        margin-bottom: 10px;
+    }  
+    input{
+        color:white;
+        text-align: left;
+        font-size: 20px;
+        font-weight: 200;
+        border: 1px solid #fff;
+        width: 300px;
+        background-color: transparent; 
+        border-radius: 10px;
+        outline: none; 
+        margin: 5px;
+    }
+    #m-h{
+        color:#d8d8d8;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 300;
+
+    } 
+    button{
+        margin-top: 10px;
+        font-size: inherit;
+        border-radius: 10px;
+        color: #fff;
+        background-color: #828588;
+        width: 150px;
+        padding: 10px;
+        outline: none;
+        cursor: pointer;
+    }
+    #btt{
+        margin-top: 1vw;
+        display: flex;
+        font-size: inherit;
+        border-radius: 10px;
+        color: #fff;
+        margin-left: 13vw;
+        text-decoration:none ;
+        background-color: #828588;
+        width: 150px;
+        padding: 10px;
+        outline: none;
+        cursor: pointer;
+        
+        
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="background">
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
+    <p id="m-h">Wellcom to the Profile-Edit page!</p>
+    <div id="div">
+    <form action="" method="post">
+        {% csrf_token %}
+        <h3 id="h3">Change Here</h3>
+
+       <label for="">User-name</label> 
+       <input type="text" id="username" name="username" placeholder="Create a username (only letters and number)"required>
+       <br>
+       <label for="">Email address</label>
+       <input type="email" id="email" name="email" placeholder="Enter Your Email Address"required> <br>
+
+       <label for="">Password</label>
+       <input type="password" id="pass1" name="pass1" placeholder="Create a Password"required> <br>
+
+       <label for="">Confirm password</label>
+       <input type="password" id="pass2" name="pass2" placeholder="Confirm Your Password"required> 
+       <br>
+    <button id="btn" type="submit">Update-Profile</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock body %}

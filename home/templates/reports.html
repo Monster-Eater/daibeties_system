@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+</head>
+<body>
+    <br>
+    <th>
+     <center> <h2>  <strong>  Your Reports  </strong></h2> </center>
+    </th>
+    <br>
+    <div class="container">
+        {% for Reports in reports %}
+        <div class="card">
+            <div class="card-header">
+            <strong> <br> <br>{{Reports.user}} <br></strong>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><strong>Result:</strong> {{ Reports.Result }}</h5>
+              <li class="card-text">
+                <strong> Pregnancies:</strong> {{ Reports.Pregnancies }}
+              </li>
+              <li class="card-text">
+                <strong>Glucose:</strong> {{ Reports.Glucose }}
+              </li>
+              <li class="card-text">
+                <strong>Blood-Pressure:</strong> {{ Reports.Blood_Pressure }}
+              </li>
+              <li class="card-text">
+                <strong>Skin_Thickness:</strong> {{ Reports.Skin_Thickness }} 
+              </li>
+              <li class="card-text">
+                <strong>Insulin:</strong> {{ Reports.Insulin }}
+              </li>
+              <li class="card-text">
+                <strong>BMI:</strong> {{ Reports.BMI }} 
+              </li>
+              <li class="card-text">
+                <strong>D_P_Function:</strong> {{ Reports.D_P_Function }}
+              </li>
+              <li class="card-text">
+                <strong>Age:</strong> {{ Reports.Age }}
+              </li>
+              <br>  <br>
+
+              <a href=" {% url 'report_pdf' %} " class="btn btn-primary">Download</a>
+            </div>
+          </div>
+
+
+        
+        <div class="card"  style="width: 18rem;" "color=secondary">
+            <div class="card-header">  
+              
+            </div>
+          
+        </div>
+        {%  endfor %}
+    </div>
+        
+
+      
+      
+      
+      
+      
+      <!-- <strong>{{Reports.user}}</strong>
+        <ul>  
+            <li> {{ Reports.user }} </li> -->
+            <!-- <li>Pregnancies: {{ Reports.Pregnancies }} </li>
+                <li>Glucose: {{ Reports.Glucose }} </li>
+                <li>Blood_Pressure: {{ Reports.Blood_Pressure }} </li>
+        <li>Skin_Thickness: {{ Reports.Skin_Thickness }} </li>
+        <li>Insulin: {{ Reports.Insulin }} </li>
+        <li>BMI: {{ Reports.BMI }} </li>
+        <li>D_P_Function: {{ Reports.D_P_Function }} </li>
+        <li>Age: {{ Reports.Age }} </li>
+    </ul>  -->
+    
+
+    <table>
+        <tr>
+           
+        </tr>        
+       
+    </table>
+
+</body>
+</html>
+{% endblock body %}
