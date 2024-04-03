@@ -1,0 +1,1 @@
+we: gunicorn diabetes.wsgi
