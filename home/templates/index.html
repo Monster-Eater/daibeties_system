@@ -3,78 +3,16 @@
 
 {% block body %}
 
+
 <style>
-  *{
-    margin: 0;
-    padding: 0;
-  }
-  input[type=submit]{
-    background-image: rgb(174, 174, 226);
-    margin-top: 10px;
-    font-size: inherit;
-    border-radius: 10px;
-    color: #fff;
-    background-color: #828588;
-    width: 20vw;
-    padding: 10px;
-    outline: none;
-    cursor: pointer;
-  }
   body{
-    background-image: url(/static/images/13th.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100vw;
-    z-index: -1;
-    opacity: 150;
-  }
-
-  #home{
-    display: flex;
-    flex-direction: column;
-    padding: 3px 200px;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
-
-  }
-  #home::before{
-    content: "";
-    position: absolute;
-    background-image: url(/static/images/1st.webp);
-    height: 100%;
-    width: 103%;
-    z-index: -1;
-    opacity: 0.89;
-    background-size: cover;
-  }
-  .h-primary{
-    font-size: 2.8rem;
-    margin-top:-3vh
-  }
-  #home h1{
-    color: white;
-    text-align: center;
-  }
-#home p{
-  color: white;
-  text-align: center;
-  font-size: 1.5rem;
-}
-#h5{
-  color:white;
-  font-size: 1.5rem;
-}
-#P{
-  color: white;
-
-}
-
+      background: #f4f4f4;
+    }
 </style>
 </head>
 
 <body>
+  <div class= "shadow p-4 mb-5 bg-body rounded">
   <div class="container my-4">
     <div id="carouselExampleDark" class="carousel carousel-dark slide">
       <div class="carousel-indicators">
@@ -87,22 +25,22 @@
         <div class="carousel-item active" data-bs-interval="10000">
           <img src="/static/images/3rd.jpg" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <h5 id="h5">Describe Your Self</h5>
-            <p id="P">If you are not comitted with your dream you goal is like a fansi desire.</p>
+            <h5 id="h5"  style="color: white">Describe Your Self</h5>
+            <p id="P" style="color: white" >If you are not comitted with your dream you goal is like a fansi desire.</p>
           </div>
         </div>
         <div class="carousel-item" data-bs-interval="2000">
           <img src="/static/images/13th.jpg" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <h5 id="h5">Don't Play With Your Life</h5>
-            <p id="P">Don't forget who you are & you become.Put your pain in to your progress</p>
+            <h5 id="h5"style="color: white">Don't Play With Your Life</h5>
+            <p id="P" style="color: white">Don't forget who you are & you become.Put your pain in to your progress</p>
           </div>
         </div>
         <div class="carousel-item">
           <img src="/static/images/4th.jpg" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <h5 id="h5">Bear the pain of Dicpline or the pain of regret</h5>
-            <p id="P">Don't let the people to play with you with your dreams and How can you wate a one seconed that could not progress for your dream </p>
+            <h5 id="h5" style="color: white">Bear the pain of Dicpline or the pain of regret</h5>
+            <p id="P" style="color: white">Don't let the people to play with you with your dreams and How can you wate a one seconed that could not progress for your dream </p>
           </div>
         </div>
       </div>
@@ -122,11 +60,10 @@
 <p>Welcome to our Health Prediction System website! We are a team of healthcare professionals and data scientists dedicated to improving the lives of those living with diabetes through accurate prediction and proactive management</p>
 <p>Let we predict us your diabetes</p>
 
-  <form action="predict">
-    <input type="submit" value="Lets! Get Started">
-  </form>
+   <a href="{% url 'predict' %}"> <button class="btn btn-secondary">Predict</button>  </a>
   
 </section>
+</div>
 </body>
 
 

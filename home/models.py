@@ -4,13 +4,13 @@ from django.db.models.signals import post_save
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    follows = models.ManyToManyField("self", 
-    related_name = "followed_by",
-    symmetrical= False, 
-    blank=True)
-
     date_modified = models.DateTimeField(User, auto_now = True)
-    profile_image = models.ImageField(null = True, blank = True, upload_to = 'profile-images/')
+    phone = models.CharField(max_length=20, blank=True)
+    city = models.CharField(max_length=20, blank=True)
+    state = models.CharField(max_length=20, blank=True)
+    country = models.CharField(max_length=20, blank=True)
+    zipcode = models.CharField(max_length=20, blank=True)
+    profile_image = models.ImageField(null = True, blank = True, upload_to = 'static/images/')
 
     def __str__(self):
         return self.user.username

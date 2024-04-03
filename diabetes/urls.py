@@ -9,7 +9,5 @@ admin.site.site_header= "Wellcom Mr.Jakir Hossein"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
-    path('members/', include('django.contrib.auth.urls')),
-    path('member/', include('members.urls')),
    
 ]

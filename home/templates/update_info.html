@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Update Profile{% endblock title %}
+
+{% block body %}
+
+
+<style>
+    body{
+      background: #f4f4f4;
+    }
+    
+    
+  
+
+  </style>
+ 
+  
+<div class= "shadow p-4 mb-5 bg-body rounded">
+
+  <h1>
+    Update User-Info...!
+  </h1>
+   <br><br>
+   <form method = "POST">
+    {% csrf_token %}
+   
+ {{ form.as_p }}
+  <br><br> 
+<button type="submit" class="btn btn-secondary">Update</button>
+  </form>
+
+<br><br>       
+   
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock body %}

@@ -11,6 +11,9 @@ urlpatterns = [
     path("donate", views.donate, name="donate"),
     path("predict", views.predict, name="predict"),
     path("result", views.result, name="result"),
-    path("report_pdf", views.report_pdf, name="report_pdf"),     
-    path('profile/<int:pk>', views.profile, name = 'profile' ),
+    path("login", views.login_user, name="login"),
+    path("logout", views.logout_user, name="logout"),
+    path("register", views.register_user, name="register"),
+    path("update_user", views.update_user, name="update_user"),
+    path("update_password", views.update_password, name="update_password"),
 ]

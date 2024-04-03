@@ -1,6 +1,12 @@
+{% load static %}
+
+
 <div>
     <nav class="navbar navbar-expand-lg bg-body-secondary">
         <div class="container-fluid">
+          
+          
+          
           <a class="navbar-brand" href=" {% url 'home' %} ">Health Prediction System</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -13,33 +19,53 @@
               <li class="nav-item">
                 <a class="nav-link" href=" {% url 'about' %} ">About</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href=" {% url 'profile' request.user.id %} ">My Profile</a>
-              </li> 
+              
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Services
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href=" {% url 'bmi' %} ">BMI Calculator</a></li>
                   <li><a class="dropdown-item" href=" {% url 'donate' %} ">Donate-Blood</a></li>
+                  <li><a class="dropdown-item" href=" {% url 'predict' %} ">Predict Diabeties</a></li>
                  
                   <li><hr class="dropdown-divider"></li>
                 </ul>
               </li>
               {% if user.is_authenticated %} 
-              <li class="nav-item">
-                <a class="nav-link" href=" {% url 'logout' %} ">Logout</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href=" {% url 'edit_profile' %} ">Edit-Profile</a>
+              <li class="nav-item ml-auto">
+                <a class="nav-link ml-auto" href="{% url 'logout' %}">Logout</a>
               </li>
                {% else %}
               <li class="nav-item">
-                <a class="nav-link" href=" {% url 'login_user' %} ">Login</a>
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
               </li>
-              # {% endif %}
+               {% endif %}
               </ul>
+            </ul>
+            {% if user.is_authenticated %}
+        
+          <ul class="navbar-nav dropdown">
+            
+              <a class="nav-link dropdown" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {% if user.profile.profile_image %}
+              <img src="{{ user.profile.profile_image.url }}" class="rounded-circle" height="25" width="25" >
+              {% else %}
+              <img src=" {% static 'images/20th.jpg' %} " width="25" height="25" class="rounded-circle">
+              {% endif %}
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href=" {% url 'update_user' %} ">Update Profile</a></li>
+                <li><a class="dropdown-item" href=" {% url 'update_password' %} ">Change Password</a></li>
+               
+                
+              </ul>
+            </li>
+            &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;
+            
+    
+          </ul>
+          {% endif %}
             </ul>
             
           </div>

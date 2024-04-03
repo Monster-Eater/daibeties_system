@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock title %}
+
+{% block body %}
+
+
+<style>
+    body{
+      background: #f4f4f4;
+    }
+    
+    
+  
+
+  </style>
+ 
+  
+<div class= "shadow p-4 mb-5 bg-body rounded">
+
+  <h1>
+    Login...!
+  </h1>
+   <br><br>
+   <form method = "POST" action = " {% url 'login' %} ">
+    {% csrf_token %}
+    <div class="mb-3">
+      
+      <input type="text" class="form-control" name = "username" placeholder = "Enter You Username" required>
+      
+    </div>
+    <div class="mb-3">
+      
+      <input type="password" class="form-control" name ='password' placeholder = "Enter Your Password" required>
+    </div>
+   <br>
+    <button type="submit" class="btn btn-secondary">Login</button>
+  
+  </form>
+
+       
+    
+  </div>
+</div>
+
+
+<div class="container">
+ <a id = 'bttn' class="btn btn-secondary" href="{% url 'register' %}">Create Account</a> 
+</div>
+
+
+
+{% endblock body %}

@@ -3,106 +3,26 @@
 {% block title %}Prediction{% endblock title %}
 {% block body %}
 
-
+{% if messages %}
+      {% for message in messages %}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>Your Result is: <h4>{{ result2 }}</h4></strong> 
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+  
+          {% endfor %}
+      {% endif %}
 
 <style>
     body{
-        background-repeat: no-repeat;
-        background-attachment: auto;
-        background-size: cover;
-        background-image: url(/static/images/5th.jpg);
-        
-    }
-    h2{
-        color: white;
-        font-family: arial, sans-serif;
-        font-size: 2.5vw;
-        font-weight: bold;
-        position: absolute;
-
-    }
-    .main{
-        position:absolute;
-        top: 100px;
-        bottom: auto;
-        left: 55vw;
-        width: 40vw;
-        background-color:rgba(0,0,0,0.5);
-        border-radius: 10px;
-        align-items: center;
-        padding: 3%;
-        box-shadow: 2px, 2px, 20px, #919191;
-        background-transparent
-    }
-
-    #h1{
-        font-size: 30px;
-        font-weight: 600;
-        color: #fff;
+      background: #f4f4f4;
     }
     
-    input[type=submit]{
-        margin-top: 35px;
-        font-size: inherit;
-        border-radius: 10px;
-        color: white;
-        
-        background-color: #5f6162;
-        width: 150px;
-        padding: 10px;
-        outline: none;
-        cursor: pointer;
-    }
-   #right{
-    color: #fff;
-        text-align: left;
-        font-size: 20px;
-        font-weight: 200;
-        width: 300px;
-        background-color: transparent;
-        outline: none; 
-    
-   }
-   #repo-btn{
-        text-decoration: none;
-        display: flex;
-        position: absolute; 
-        bottom : 16%;
-        font-size: inherit;
-        border-radius: 10px;
-        color: white;
-        left: 66%;
-        background-color: #5f6162;
-        width: 150px;
-        padding: 13px;
-        cursor: pointer;
-        outline: none;
-        box-shadow: #5f6162;
-
-
-    }
-     
-    
-   #tab{
-   
-    text-align: left;
-    font-size: 20px;
-    font-weight: 200;
-    border: 1px solid #fff;
-    width: 300px;
-    background-color: transparent; 
-    border-radius: 10px;
-    outline: none; 
-    color: #fff;
-
-   } 
-    #result{
-    color:#fff;
-}
-
 
 </style>
-<h2 align="center">Welcome to the Prediction Page</h2>
+<div class= "shadow p-4 mb-5 bg-body rounded">
+
+
 <div align="center" class="main">
     <h1 id="h1">
         Please Enter some information about your health:
@@ -115,51 +35,60 @@
     {% else %}
     <form action="result" method="get">  
     {% csrf_token %}    
-      
-        <table id="a">
-            <tr>
-                <td align="right" id="right">Pregnancies:</td>
-                <td align="left" ><input type="text" required name="n1" id='tab'></td>
-            </tr>
-             <tr>
-                <td align="right" id= "right">Glucose:</td>
-                <td align="left" ><input type="text" required name="n2" id='tab'></td>
-            </tr>
-             <tr>
-                <td align="right" id= "right">Blood Pressure:</td>
-                <td align="left" ><input type="text" rquired name="n3" id='tab'></td>
-            </tr>
-            <tr>
-                <td align="right" id= "right">Skin Thickness:</td>
-                <td align="left"><input type="text" required name="n4" id='tab'></td>
-            </tr>
-            <tr>
-                <td align="right" id= "right">Insulin:</td>
-                <td align="left"><input type="text" required name="n5" id='tab'></td>
-            </tr>
-            <tr>
-                <td align="right" id="right">BMI:</td>
-                <td align="left"><input type="text" required name="n6" id='tab'></td>
-            </tr>
-            <tr>
-                <td align="right" id= "right">Diabetes Pedigree Function:</td>
-                <td align="left"><input type="text" required name="n7" id='tab'></td>
-            </tr>
-            <tr>
-                <td align="right" id= "right">Age:</td>
-                <td align="left"><input type="text" reuired name="n8" id='tab'></td>
-            </tr>
 
-        </table>
-        <input type="submit">
-      </form>
-    </form>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Pregnancies</span>
+        <input type="text" required name="n1" class="form-control" placeholder="Please! Enter Pregnancies you contain" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+      
+      <div class="input-group mb-3">
+        <input type="text" required name="n2" class="form-control" placeholder="Enter Your Random Blood Glucose Level! " aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <span class="input-group-text" id="basic-addon2">Glucose Level</span>
+      </div>
+      
+      <div class="mb-3">
+        
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon3">Blood Pressure</span>
+          <input type="text" required name="n3" class="form-control" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
+        </div>
+        
+      </div>
+      
+      <div class="input-group mb-3">
+        <span class="input-group-text">Skin Thickness </span>
+        <input type="text" required name="n4" class="form-control" aria-label="Amount (to the nearest dollar)">
+        <span class="input-group-text">Normally Which is 0.6mm to 3.30mm</span>
+      </div>
+      
+      <div class="input-group mb-3">
+        <input type="text" required name="n5" class="form-control" placeholder="Blood Insulin" aria-label="Username">
+        <span class="input-group-text">Eneter Your Normall Blood Insulin Level</span>
+        <input type="text" required name="n6" class="form-control" placeholder="Enter Your BMI" aria-label="Server">
+      </div>
+      
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Diabetes Pedigree Function</span>
+        <input type="text" required name="n7" class="form-control" placeholder="Please! Enter Diabetes Pedigree Function" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Age</span>
+        <input type="text"required name="n8" class="form-control" placeholder="Please! Enter Your Age " aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+      
+       
+        
     <br>
-    <p name=result id="result">Result: {{result2}} 
-    </p>
-    <a id="repo-btn" href=" {% url 'reports' %} ">See Your Reports</a>
+    <div id="{{result2}}"></div>
+    <button type="submit" class="btn btn-primary" id="liveAlertBtn">Submit</button>
 </div>
+    
+</form>
 </form>
 {% endif %}
-
+</div>
 {% endblock body %}
+
+
+
+
