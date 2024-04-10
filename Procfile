@@ -1,1 +1,1 @@
-we: gunicorn diabetes.wsgi
+web: gunicorn diabetes.wsgi
